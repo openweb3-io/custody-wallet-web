@@ -1,0 +1,26 @@
+{
+    "name": "@custody-wallet-web/core",
+    "version": "0.1.0",
+    "author": "AI <ai@openweb3.io>",
+    "description": "Core features and state for web wallet",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "rm -fr dist && tsc",
+        "start": "tsc -w",
+        "sdk": "npm-run-all -p generate:*"
+    },
+    "devDependencies": {
+        "@types/eventsource": "^1.1.15",
+        "npm-run-all": "^4.1.5",
+        "typescript": "^4.9.4",
+        "yarn-run-all": "^3.1.1"
+    },
+    "dependencies": {
+        "axios": "^1.7.7",
+        "bignumber.js": "^9.1.1",
+        "eventemitter3": "^5.0.1",
+        "eventsource": "^2.0.2",
+        "query-string": "^8.1.0",
+        "tweetnacl": "^1.0.3"
+    }
+}
