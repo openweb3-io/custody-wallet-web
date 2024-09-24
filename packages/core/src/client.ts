@@ -4,6 +4,7 @@ import { CurrencyApi } from './currency/currency_api';
 import { DepositAddressApi } from './deposit_address/deposit_address_api';
 import { IDepositAddressApi } from './deposit_address/interface';
 import { IWalletClient } from './interface';
+import { IOrderApi, OrderApi } from './order';
 import { RPC } from './rpc/rpc';
 import { ITransactionApi } from './transaction';
 import { TransactionApi } from './transaction/transaction_api';
@@ -38,6 +39,7 @@ export class WalletClient extends EventEmitter implements IWalletClient {
   private _currencyApi: ICurrencyApi;
   private _transactionApi: ITransactionApi;
   private _depositAddressApi: IDepositAddressApi;
+  private _orderApi: IOrderApi;
 
   constructor(options: WalletClientOptions) {
     super();
@@ -48,6 +50,7 @@ export class WalletClient extends EventEmitter implements IWalletClient {
     this._currencyApi = new CurrencyApi(this.rpc);
     this._transactionApi = new TransactionApi(this.rpc);
     this._depositAddressApi = new DepositAddressApi(this.rpc);
+    this._orderApi = new OrderApi(this.rpc);
   }
 
   async login(jwt: string): Promise<void> {
@@ -78,6 +81,10 @@ export class WalletClient extends EventEmitter implements IWalletClient {
 
   get depositAddressApi(): IDepositAddressApi {
     return this._depositAddressApi;
+  }
+
+  get orderApi(): IOrderApi {
+    return this._orderApi;
   }
 
   watch() {
