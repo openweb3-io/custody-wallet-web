@@ -1,23 +1,23 @@
-import { BaseApi } from "../base/base_api";
-import { GetTransactionRequest, GetTransactionsRequest, GetTransactionsResponse, ITransactionApi, Transaction } from "./interface";
+import { BaseApi, List } from '../base/base_api';
+import { GetTransactionsRequest, ITransactionApi, Transaction } from './interface';
+
+const getTransactionsDefaultParams: GetTransactionsRequest = { limit: 50 };
 
 export class TransactionApi extends BaseApi implements ITransactionApi {
-  async getTransactions(req: GetTransactionsRequest): Promise<GetTransactionsResponse> {
-    const res = await this.rpc.request({
+  async getTransactions(params: GetTransactionsRequest): Promise<List<Transaction>> {
+    const res = await this.rpc.request<List<Transaction>>({
       method: 'GET',
       url: '/transactions',
-      params: req,
+      params: { getTransactionsDefaultParams, ...params }
     });
     return res.data;
   }
 
-  async getTransaction(req: GetTransactionRequest): Promise<Transaction> {
-    const res = await this.rpc.request({
+  async getTransaction(id: string): Promise<Transaction> {
+    const res = await this.rpc.request<Transaction>({
       method: 'GET',
-      url: `/transactions/${req.id}`,
-      params: req,
+      url: `/transactions/${id}`
     });
     return res.data;
   }
-
 }
