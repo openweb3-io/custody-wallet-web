@@ -12,5 +12,5 @@ export interface Account {
 export interface GetAccountsRequest extends PageQuery {}
 
 export interface IAccountApi {
-  getAccounts(req: GetAccountsRequest): Promise<Page<Account>>;
+  getAccounts(params: GetAccountsRequest): Promise<Page<Account>>;
 }
