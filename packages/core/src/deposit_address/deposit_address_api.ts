@@ -1,14 +1,13 @@
-import { BaseApi } from "../base/base_api";
-import { Address, GetDepositAddressRequest, IDepositAddressApi } from "./interface";
+import { BaseApi } from '../base/base_api';
+import { Address, GetDepositAddressRequest, IDepositAddressApi } from './interface';
 
-export class DepositAddressApi extends BaseApi implements IDepositAddressApi {  
+export class DepositAddressApi extends BaseApi implements IDepositAddressApi {
   async get(params: GetDepositAddressRequest): Promise<Address> {
-    const res = await this.rpc.request({
+    const res = await this.rpc.request<Address>({
       method: 'GET',
-      url: `/deposit_addresses`,
-      params,
-    })
-    
+      url: `/wallets/deposit_address`,
+      params
+    });
     return res.data;
   }
 }

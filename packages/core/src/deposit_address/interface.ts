@@ -1,4 +1,3 @@
-
 export interface Address {
   network: string;
   address: string;
@@ -10,5 +9,5 @@ export interface GetDepositAddressRequest {
 }
 
 export interface IDepositAddressApi {
-  get(request: GetDepositAddressRequest): Promise<Address>
+  get(params: GetDepositAddressRequest): Promise<Address>;
 }
