@@ -1,5 +1,6 @@
 export * from './interface';
 export * from './client';
+export * from './base';
 export * from './account';
 export * from './currency';
 export * from './deposit';

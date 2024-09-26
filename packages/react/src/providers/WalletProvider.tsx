@@ -1,56 +1,62 @@
-import React, { createContext, FC, PropsWithChildren, useContext, useEffect, useState } from 'react';
+import React, {
+  createContext,
+  FC,
+  PropsWithChildren,
+  useContext,
+  useEffect,
+  useState
+} from 'react';
 import { Account, EventTypes, IWalletClient, AccountChangedEvent } from '@custody-wallet-web/core';
 import { useAccounts } from '../hooks';
 
-export type WalletContextProps = {
+export type WalletContextValue = {
   client: IWalletClient;
   accounts: Account[];
-  setAccounts: (accounts: Account[]) => void;
-}
+};
 
-export const WalletContext = createContext<WalletContextProps>({} as any);
+export const WalletContext = createContext<WalletContextValue>({} as WalletContextValue);
 
 export const useWalletContext = () => useContext(WalletContext);
 
 export type WalletProviderProps = {
   client: IWalletClient;
-}
+};
 
 export const WalletProvider: FC<PropsWithChildren<WalletProviderProps>> = ({
   client,
-  children,
+  children
 }) => {
   const [accounts, setAccounts] = useState<Account[]>([]);
 
-  const { data: _accounts, isSuccess } = useAccounts();
+  const { data: _accounts, isSuccess } = useAccounts({});
 
   useEffect(() => {
     if (!isSuccess) return;
-
-    setAccounts(_accounts);
-  }, [_accounts]);
+    setAccounts(_accounts.items);
+  }, [_accounts, isSuccess]);
 
   useEffect(() => {
-    const accountChanged = (ev: AccountChangedEvent) => {      
-      setAccounts
-    }
+    const accountChanged = ({ account }: AccountChangedEvent) => {
+      setAccounts(prevAccounts => {
+        const idx = prevAccounts.findIndex(it => it.currency === account.currency);
+        if (idx >= 0) {
+          const accts = [...prevAccounts];
+          accts[idx] = account;
+          return accts;
+        } else {
+          return [...prevAccounts, account];
+        }
+      });
+    };
 
-    client.on(EventTypes.ACCOUNT_CHANGED, accountChanged)
+    client.on(EventTypes.ACCOUNT_CHANGED, accountChanged);
 
     return () => {
       client.off(EventTypes.ACCOUNT_CHANGED, accountChanged);
-    }
-  },[client]);
+    };
+  }, [client]);
 
-  const value = {
-    client,
-    accounts, 
-    setAccounts,
-  }
+  const value = { client, accounts };
 
-  return (
-    <WalletContext.Provider value={value}>
-      {children}
-    </WalletContext.Provider>
-  );
-}
+  return <WalletContext.Provider value={value}>{children}</WalletContext.Provider>;
+};

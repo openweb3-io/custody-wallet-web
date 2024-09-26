@@ -1,15 +1,15 @@
-import { useWalletContext } from "../providers/WalletProvider"
 import { useQuery } from '@tanstack/react-query';
+import { Transaction } from '@custody-wallet-web/core';
+import { useWalletContext } from '../providers/WalletProvider';
 import { QueryKey } from './keys';
-import { GetTransactionRequest, Transaction } from "@custody-wallet-web/core";
 
-export const useTransaction = (params: GetTransactionRequest) => {
+export const useTransaction = (id: string) => {
   const { client } = useWalletContext();
 
   return useQuery<Transaction>({
-    queryKey: [QueryKey.transaction],
+    queryKey: [QueryKey.transaction, id],
     queryFn: async () => {
-      return await client.transactionApi.getTransaction(params);
-    },
+      return await client.transactionApi.getTransaction(id);
+    }
   });
-}
+};

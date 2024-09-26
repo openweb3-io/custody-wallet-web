@@ -1,9 +1,9 @@
-
 export enum QueryKey {
-  currency = 'currency',
-  currencies = 'currencies',
   accounts = 'accounts',
+  currencies = 'currencies',
+  currency = 'currency',
   depositAddress = 'depositAddress',
-  transactions = 'transactions',
+  order = 'order',
   transaction = 'transaction',
+  transactions = 'transactions'
 }

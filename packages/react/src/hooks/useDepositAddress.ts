@@ -1,8 +1,7 @@
-import { useWalletContext } from "../providers/WalletProvider"
 import { useQuery } from '@tanstack/react-query';
+import { Address, GetDepositAddressRequest } from '@custody-wallet-web/core';
+import { useWalletContext } from '../providers/WalletProvider';
 import { QueryKey } from './keys';
-import { Address, GetDepositAddressRequest } from "@custody-wallet-web/core/dist/deposit_address/interface";
-
 
 export const useDepositAddress = (params: GetDepositAddressRequest) => {
   const { client } = useWalletContext();
@@ -11,6 +10,6 @@ export const useDepositAddress = (params: GetDepositAddressRequest) => {
     queryKey: [QueryKey.depositAddress, params],
     queryFn: async () => {
       return await client.depositAddressApi.get(params);
-    },
+    }
   });
-}
+};
