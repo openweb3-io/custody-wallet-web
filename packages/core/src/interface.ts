@@ -4,8 +4,8 @@ import { ICurrencyApi } from './currency';
 import { IDepositAddressApi } from './deposit_address';
 import { ITransactionApi } from './transaction';
 import { IOrderApi } from './order';
-import { IInvoiceApi } from './invoice';
 import { IWithdrawApi } from './withdraw';
+import { IDepositApi } from './deposit';
 
 export enum EventTypes {
   ACCOUNT_CHANGED = 'account_changed'
@@ -44,8 +44,8 @@ export interface IWalletClient {
   get accountApi(): IAccountApi;
   get transactionApi(): ITransactionApi;
   get currencyApi(): ICurrencyApi;
+  get depositApi(): IDepositApi;
   get depositAddressApi(): IDepositAddressApi;
   get orderApi(): IOrderApi;
-  get invoiceApi(): IInvoiceApi;
   get withdrawApi(): IWithdrawApi;
 }

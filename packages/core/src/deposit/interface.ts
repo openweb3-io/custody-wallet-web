@@ -26,6 +26,6 @@ export interface CreateInvoiceRequest {
   note?: string;
 }
 
-export interface IInvoiceApi {
-  create(data: CreateInvoiceRequest): Promise<Invoice>;
+export interface IDepositApi {
+  createInvoice(data: CreateInvoiceRequest): Promise<Invoice>;
 }
