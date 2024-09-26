@@ -4,12 +4,14 @@ import { CurrencyApi } from './currency/currency_api';
 import { DepositAddressApi } from './deposit_address/deposit_address_api';
 import { IDepositAddressApi } from './deposit_address/interface';
 import { IWalletClient } from './interface';
+import { IInvoiceApi, InvoiceApi } from './invoice';
 import { IOrderApi, OrderApi } from './order';
 import { RPC } from './rpc/rpc';
 import { ITransactionApi } from './transaction';
 import { TransactionApi } from './transaction/transaction_api';
 import { EventEmitter } from 'eventemitter3';
 import EventSourcePolyfill from 'eventsource';
+import { IWithdrawApi, WithdrawApi } from './withdraw';
 
 export interface WalletEvent {
   eventType: string;
@@ -40,6 +42,8 @@ export class WalletClient extends EventEmitter implements IWalletClient {
   private _transactionApi: ITransactionApi;
   private _depositAddressApi: IDepositAddressApi;
   private _orderApi: IOrderApi;
+  private _invoiceApi: IInvoiceApi;
+  private _withdrawApi: IWithdrawApi;
 
   constructor(options: WalletClientOptions) {
     super();
@@ -50,7 +54,9 @@ export class WalletClient extends EventEmitter implements IWalletClient {
     this._currencyApi = new CurrencyApi(this.rpc);
     this._transactionApi = new TransactionApi(this.rpc);
     this._depositAddressApi = new DepositAddressApi(this.rpc);
+    this._invoiceApi = new InvoiceApi(this.rpc);
     this._orderApi = new OrderApi(this.rpc);
+    this._withdrawApi = new WithdrawApi(this.rpc);
   }
 
   async login(jwt: string): Promise<void> {
@@ -85,6 +91,14 @@ export class WalletClient extends EventEmitter implements IWalletClient {
 
   get orderApi(): IOrderApi {
     return this._orderApi;
+  }
+
+  get invoiceApi(): IInvoiceApi {
+    return this._invoiceApi;
+  }
+
+  get withdrawApi(): IWithdrawApi {
+    return this._withdrawApi;
   }
 
   watch() {
