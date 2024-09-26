@@ -102,14 +102,14 @@ export class WalletClient extends EventEmitter implements IWalletClient {
   }
 
   watch() {
-    const url = this.options.baseUrl + '/watch';
+    this.unwatch();
 
     const handleEvent = (event: WalletEvent) => {
       this.on(event.eventType, event.payload);
     };
 
     this.closeConnection = watchEvents({
-      url,
+      url: `${this.options.baseUrl}/wallets/watch`,
       handleEvent
     });
   }
@@ -132,9 +132,7 @@ const watchEvents = ({
   const eventSource = new EventSourcePolyfill(url);
 
   const onMessage = (params: MessageEvent<string>) => {
-    // 处理事件并分发
     const { event } = JSON.parse(params.data);
-
     handleEvent(event);
   };
 
