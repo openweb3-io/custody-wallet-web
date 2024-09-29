@@ -65,40 +65,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@custody-wallet-web/core@npm:0.1.0, @custody-wallet-web/core@workspace:packages/core":
-  version: 0.0.0-use.local
-  resolution: "@custody-wallet-web/core@workspace:packages/core"
-  dependencies:
-    "@types/eventsource": "npm:^1.1.15"
-    axios: "npm:^1.7.7"
-    bignumber.js: "npm:^9.1.1"
-    eventemitter3: "npm:^5.0.1"
-    eventsource: "npm:^2.0.2"
-    npm-run-all: "npm:^4.1.5"
-    query-string: "npm:^8.1.0"
-    tweetnacl: "npm:^1.0.3"
-    typescript: "npm:^4.9.4"
-    yarn-run-all: "npm:^3.1.1"
-  languageName: unknown
-  linkType: soft
-
-"@custody-wallet-web/react@workspace:packages/react":
-  version: 0.0.0-use.local
-  resolution: "@custody-wallet-web/react@workspace:packages/react"
-  dependencies:
-    "@custody-wallet-web/core": "npm:0.1.0"
-    "@tanstack/react-query": "npm:^5.54.1"
-    "@types/react": "npm:^18.3.5"
-    bignumber.js: "npm:^9.1.1"
-    npm-run-all: "npm:^4.1.5"
-    query-string: "npm:^8.1.0"
-    react: "npm:^18.3.1"
-    tweetnacl: "npm:^1.0.3"
-    typescript: "npm:^4.9.4"
-    yarn-run-all: "npm:^3.1.1"
-  languageName: unknown
-  linkType: soft
-
 "@discoveryjs/json-ext@npm:^0.5.0":
   version: 0.5.7
   resolution: "@discoveryjs/json-ext@npm:0.5.7"
@@ -479,6 +445,40 @@ __metadata:
   checksum: 10/1e0e04087049b24b38bc0b30d87a9388ee3ca1d3fdfc347c2f77d84fcfe6a51f250bc57ba2c1f614d7e4285c6c62bf8c769bc19aa0949ea39e5b043ee023b0bd
   languageName: node
   linkType: hard
+
+"@openweb3-io/custody-wallet-js@npm:0.1.0, @openweb3-io/custody-wallet-js@workspace:packages/core":
+  version: 0.0.0-use.local
+  resolution: "@openweb3-io/custody-wallet-js@workspace:packages/core"
+  dependencies:
+    "@types/eventsource": "npm:^1.1.15"
+    axios: "npm:^1.7.7"
+    bignumber.js: "npm:^9.1.1"
+    eventemitter3: "npm:^5.0.1"
+    eventsource: "npm:^2.0.2"
+    npm-run-all: "npm:^4.1.5"
+    query-string: "npm:^8.1.0"
+    tweetnacl: "npm:^1.0.3"
+    typescript: "npm:^4.9.4"
+    yarn-run-all: "npm:^3.1.1"
+  languageName: unknown
+  linkType: soft
+
+"@openweb3-io/custody-wallet-react@workspace:packages/react":
+  version: 0.0.0-use.local
+  resolution: "@openweb3-io/custody-wallet-react@workspace:packages/react"
+  dependencies:
+    "@openweb3-io/custody-wallet-js": "npm:0.1.0"
+    "@tanstack/react-query": "npm:^5.54.1"
+    "@types/react": "npm:^18.3.5"
+    bignumber.js: "npm:^9.1.1"
+    npm-run-all: "npm:^4.1.5"
+    query-string: "npm:^8.1.0"
+    react: "npm:^18.3.1"
+    tweetnacl: "npm:^1.0.3"
+    typescript: "npm:^4.9.4"
+    yarn-run-all: "npm:^3.1.1"
+  languageName: unknown
+  linkType: soft
 
 "@pkgjs/parseargs@npm:^0.11.0":
   version: 0.11.0

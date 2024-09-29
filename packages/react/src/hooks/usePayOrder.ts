@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { Order, PayOrderRequest } from '@custody-wallet-web/core';
+import { Order, PayOrderRequest } from '@openweb3-io/custody-wallet-js';
 import { useWalletContext } from '../providers/WalletProvider';
 import { QueryKey } from './keys';
 

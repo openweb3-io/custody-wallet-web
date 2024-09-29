@@ -6,7 +6,7 @@ import React, {
   useEffect,
   useState
 } from 'react';
-import { Account, EventTypes, IWalletClient, AccountChangedEvent } from '@custody-wallet-web/core';
+import { Account, EventTypes, IWalletClient, AccountChangedEvent } from '@openweb3-io/custody-wallet-js';
 import { useAccounts } from '../hooks';
 
 export type WalletContextValue = {
