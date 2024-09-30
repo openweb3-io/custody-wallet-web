@@ -480,6 +480,32 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@openweb3-io/custody-wallet-web@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@openweb3-io/custody-wallet-web@workspace:."
+  dependencies:
+    "@typescript-eslint/eslint-plugin": "npm:^5.50.0"
+    "@typescript-eslint/parser": "npm:^5.50.0"
+    eslint: "npm:^8.33.0"
+    eslint-config-airbnb-typescript: "npm:^17.0.0"
+    eslint-config-prettier: "npm:^8.6.0"
+    eslint-plugin-chakra-ui: "npm:^0.7.6"
+    eslint-plugin-i18next: "npm:^6.0.0-2"
+    eslint-plugin-import: "npm:^2.27.5"
+    eslint-plugin-mobx: "npm:^0.0.9"
+    eslint-plugin-prettier: "npm:^4.2.1"
+    eslint-plugin-react: "npm:^7.32.2"
+    eslint-plugin-react-hooks: "npm:^4.6.0"
+    eslint-plugin-unused-imports: "npm:^2.0.0"
+    prettier: "npm:^2.6.2"
+    turbo: "npm:^2.0.4"
+    typescript: "npm:^4.9.4"
+    webpack: "npm:^5.80.0"
+    webpack-cli: "npm:^5.0.1"
+    wrangler: "npm:^3.7.0"
+  languageName: unknown
+  linkType: soft
+
 "@pkgjs/parseargs@npm:^0.11.0":
   version: 0.11.0
   resolution: "@pkgjs/parseargs@npm:0.11.0"
@@ -1551,32 +1577,6 @@ __metadata:
   checksum: 10/f593cce41ff5ade23f44e77521e3a1bcc2c64107041e1bf6c3c32adc5187d0d60983292fda326154d20b01079e24931aa5b08e4467cc488b60bb1e7f6d478ade
   languageName: node
   linkType: hard
-
-"custody-wallet-web@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "custody-wallet-web@workspace:."
-  dependencies:
-    "@typescript-eslint/eslint-plugin": "npm:^5.50.0"
-    "@typescript-eslint/parser": "npm:^5.50.0"
-    eslint: "npm:^8.33.0"
-    eslint-config-airbnb-typescript: "npm:^17.0.0"
-    eslint-config-prettier: "npm:^8.6.0"
-    eslint-plugin-chakra-ui: "npm:^0.7.6"
-    eslint-plugin-i18next: "npm:^6.0.0-2"
-    eslint-plugin-import: "npm:^2.27.5"
-    eslint-plugin-mobx: "npm:^0.0.9"
-    eslint-plugin-prettier: "npm:^4.2.1"
-    eslint-plugin-react: "npm:^7.32.2"
-    eslint-plugin-react-hooks: "npm:^4.6.0"
-    eslint-plugin-unused-imports: "npm:^2.0.0"
-    prettier: "npm:^2.6.2"
-    turbo: "npm:^2.0.4"
-    typescript: "npm:^4.9.4"
-    webpack: "npm:^5.80.0"
-    webpack-cli: "npm:^5.0.1"
-    wrangler: "npm:^3.7.0"
-  languageName: unknown
-  linkType: soft
 
 "data-uri-to-buffer@npm:^2.0.0":
   version: 2.0.2
