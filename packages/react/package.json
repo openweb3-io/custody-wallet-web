@@ -1,5 +1,5 @@
 {
-    "name": "@openweb3-io/custody-wallet-react",
+    "name": "custody-wallet-react",
     "version": "0.1.0",
     "author": "AI <ai@openweb3.io>",
     "description": "Core features and state for web wallet",
@@ -16,9 +16,9 @@
         "yarn-run-all": "^3.1.1"
     },
     "dependencies": {
-        "@openweb3-io/custody-wallet-js": "0.1.0",
         "@tanstack/react-query": "^5.54.1",
         "bignumber.js": "^9.1.1",
+        "custody-wallet-js": "0.1.0",
         "query-string": "^8.1.0",
         "react": "^18.3.1",
         "tweetnacl": "^1.0.3"
