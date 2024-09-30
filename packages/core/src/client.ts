@@ -110,7 +110,8 @@ export class WalletClient extends EventEmitter implements IWalletClient {
 
     this.closeConnection = watchEvents({
       url: `${this.options.baseUrl}/wallets/watch`,
-      handleEvent
+      handleEvent,
+      props: { headers: { Authorization: `Bearer ${this.rpc.accessToken}` } }
     });
   }
 
@@ -124,12 +125,14 @@ export class WalletClient extends EventEmitter implements IWalletClient {
 
 const watchEvents = ({
   url,
-  handleEvent
+  handleEvent,
+  props
 }: {
   url: string;
   handleEvent: (event: WalletEvent) => void;
+  props: any;
 }) => {
-  const eventSource = new EventSourcePolyfill(url);
+  const eventSource = new EventSourcePolyfill(url, props);
 
   const onMessage = (params: MessageEvent<string>) => {
     const { event } = JSON.parse(params.data);
