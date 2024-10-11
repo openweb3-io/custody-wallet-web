@@ -1,11 +1,11 @@
 import { useMutation } from '@tanstack/react-query';
-import { WithdrawRequest } from 'custody-wallet-js';
+import { WithdrawRequest, WithdrawResult } from 'custody-wallet-js';
 import { useWalletContext } from '../providers/WalletProvider';
 
 export const useWithdraw = (req: WithdrawRequest) => {
   const { client } = useWalletContext();
 
-  return useMutation<void>({
+  return useMutation<WithdrawResult>({
     mutationFn: async () => {
       return await client.withdrawApi.withdraw(req);
     }

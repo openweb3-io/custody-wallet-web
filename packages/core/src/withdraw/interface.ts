@@ -5,6 +5,10 @@ export interface WithdrawRequest {
   address: string;
 }
 
+export interface WithdrawResult {
+  transaction_id: string;
+}
+
 export interface IWithdrawApi {
-  withdraw(data: WithdrawRequest): Promise<void>;
+  withdraw(data: WithdrawRequest): Promise<WithdrawResult>;
 }
