@@ -6,17 +6,23 @@ export enum InvoiceStatus {
   COMPLETED = 'COMPLETED'
 }
 
+export interface TonConnectCredentials {
+  depositAddress: string;
+  note: string;
+}
+
 export interface Invoice {
   id: string;
+  user_id: string;
   channel: string;
-  amount: string;
   currency: string;
+  amount: string;
+  credentials: any;
   status: InvoiceStatus;
-  note?: string;
   created_at: Date;
   expired_at?: Date;
   failed_at?: Date;
-  payed_at?: Date;
+  paid_at?: Date;
 }
 
 export interface CreateInvoiceRequest {
