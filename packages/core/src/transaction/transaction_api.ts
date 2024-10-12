@@ -8,7 +8,7 @@ export class TransactionApi extends BaseApi implements ITransactionApi {
     const res = await this.rpc.request<List<Transaction>>({
       method: 'GET',
       url: '/transactions',
-      params: { getTransactionsDefaultParams, ...params }
+      params: { ...getTransactionsDefaultParams, ...params }
     });
     return res.data;
   }
