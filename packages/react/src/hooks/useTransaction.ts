@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { Transaction } from 'custody-wallet-js';
+import { Transaction } from '@openweb3-io/openwallet-core';
 import { useWalletContext } from '../providers/WalletProvider';
 import { QueryKey } from './keys';
 

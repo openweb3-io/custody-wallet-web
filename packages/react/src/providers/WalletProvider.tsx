@@ -1,5 +1,5 @@
 import React, { createContext, FC, PropsWithChildren, useContext, useState } from 'react';
-import { IWalletClient } from 'custody-wallet-js';
+import { IWalletClient } from '@openweb3-io/openwallet-core';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 export type WalletContextValue = {

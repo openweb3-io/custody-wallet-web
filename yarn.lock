@@ -446,6 +446,66 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@openweb3-io/openwallet-core@npm:0.1.0, @openweb3-io/openwallet-core@workspace:packages/core":
+  version: 0.0.0-use.local
+  resolution: "@openweb3-io/openwallet-core@workspace:packages/core"
+  dependencies:
+    "@types/eventsource": "npm:^1.1.15"
+    axios: "npm:^1.7.7"
+    bignumber.js: "npm:^9.1.1"
+    eventemitter3: "npm:^5.0.1"
+    eventsource: "npm:^2.0.2"
+    npm-run-all: "npm:^4.1.5"
+    query-string: "npm:^8.1.0"
+    tweetnacl: "npm:^1.0.3"
+    typescript: "npm:^4.9.4"
+    yarn-run-all: "npm:^3.1.1"
+  languageName: unknown
+  linkType: soft
+
+"@openweb3-io/openwallet-react@workspace:packages/react":
+  version: 0.0.0-use.local
+  resolution: "@openweb3-io/openwallet-react@workspace:packages/react"
+  dependencies:
+    "@openweb3-io/openwallet-core": "npm:0.1.0"
+    "@tanstack/react-query": "npm:^5.54.1"
+    "@types/react": "npm:^18.3.5"
+    bignumber.js: "npm:^9.1.1"
+    npm-run-all: "npm:^4.1.5"
+    query-string: "npm:^8.1.0"
+    react: "npm:^18.3.1"
+    tweetnacl: "npm:^1.0.3"
+    typescript: "npm:^4.9.4"
+    yarn-run-all: "npm:^3.1.1"
+  languageName: unknown
+  linkType: soft
+
+"@openweb3-io/openwallet-web@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@openweb3-io/openwallet-web@workspace:."
+  dependencies:
+    "@typescript-eslint/eslint-plugin": "npm:^5.50.0"
+    "@typescript-eslint/parser": "npm:^5.50.0"
+    eslint: "npm:^8.33.0"
+    eslint-config-airbnb-typescript: "npm:^17.0.0"
+    eslint-config-prettier: "npm:^8.6.0"
+    eslint-plugin-chakra-ui: "npm:^0.7.6"
+    eslint-plugin-i18next: "npm:^6.0.0-2"
+    eslint-plugin-import: "npm:^2.27.5"
+    eslint-plugin-mobx: "npm:^0.0.9"
+    eslint-plugin-prettier: "npm:^4.2.1"
+    eslint-plugin-react: "npm:^7.32.2"
+    eslint-plugin-react-hooks: "npm:^4.6.0"
+    eslint-plugin-unused-imports: "npm:^2.0.0"
+    prettier: "npm:^2.6.2"
+    turbo: "npm:^2.0.4"
+    typescript: "npm:^4.9.4"
+    webpack: "npm:^5.80.0"
+    webpack-cli: "npm:^5.0.1"
+    wrangler: "npm:^3.7.0"
+  languageName: unknown
+  linkType: soft
+
 "@pkgjs/parseargs@npm:^0.11.0":
   version: 0.11.0
   resolution: "@pkgjs/parseargs@npm:0.11.0"
@@ -1517,66 +1577,6 @@ __metadata:
   checksum: 10/f593cce41ff5ade23f44e77521e3a1bcc2c64107041e1bf6c3c32adc5187d0d60983292fda326154d20b01079e24931aa5b08e4467cc488b60bb1e7f6d478ade
   languageName: node
   linkType: hard
-
-"custody-wallet-js@npm:0.1.0, custody-wallet-js@workspace:packages/core":
-  version: 0.0.0-use.local
-  resolution: "custody-wallet-js@workspace:packages/core"
-  dependencies:
-    "@types/eventsource": "npm:^1.1.15"
-    axios: "npm:^1.7.7"
-    bignumber.js: "npm:^9.1.1"
-    eventemitter3: "npm:^5.0.1"
-    eventsource: "npm:^2.0.2"
-    npm-run-all: "npm:^4.1.5"
-    query-string: "npm:^8.1.0"
-    tweetnacl: "npm:^1.0.3"
-    typescript: "npm:^4.9.4"
-    yarn-run-all: "npm:^3.1.1"
-  languageName: unknown
-  linkType: soft
-
-"custody-wallet-react@workspace:packages/react":
-  version: 0.0.0-use.local
-  resolution: "custody-wallet-react@workspace:packages/react"
-  dependencies:
-    "@tanstack/react-query": "npm:^5.54.1"
-    "@types/react": "npm:^18.3.5"
-    bignumber.js: "npm:^9.1.1"
-    custody-wallet-js: "npm:0.1.0"
-    npm-run-all: "npm:^4.1.5"
-    query-string: "npm:^8.1.0"
-    react: "npm:^18.3.1"
-    tweetnacl: "npm:^1.0.3"
-    typescript: "npm:^4.9.4"
-    yarn-run-all: "npm:^3.1.1"
-  languageName: unknown
-  linkType: soft
-
-"custody-wallet-web@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "custody-wallet-web@workspace:."
-  dependencies:
-    "@typescript-eslint/eslint-plugin": "npm:^5.50.0"
-    "@typescript-eslint/parser": "npm:^5.50.0"
-    eslint: "npm:^8.33.0"
-    eslint-config-airbnb-typescript: "npm:^17.0.0"
-    eslint-config-prettier: "npm:^8.6.0"
-    eslint-plugin-chakra-ui: "npm:^0.7.6"
-    eslint-plugin-i18next: "npm:^6.0.0-2"
-    eslint-plugin-import: "npm:^2.27.5"
-    eslint-plugin-mobx: "npm:^0.0.9"
-    eslint-plugin-prettier: "npm:^4.2.1"
-    eslint-plugin-react: "npm:^7.32.2"
-    eslint-plugin-react-hooks: "npm:^4.6.0"
-    eslint-plugin-unused-imports: "npm:^2.0.0"
-    prettier: "npm:^2.6.2"
-    turbo: "npm:^2.0.4"
-    typescript: "npm:^4.9.4"
-    webpack: "npm:^5.80.0"
-    webpack-cli: "npm:^5.0.1"
-    wrangler: "npm:^3.7.0"
-  languageName: unknown
-  linkType: soft
 
 "data-uri-to-buffer@npm:^2.0.0":
   version: 2.0.2

@@ -1,5 +1,5 @@
 import { useMutation } from '@tanstack/react-query';
-import { WithdrawRequest, WithdrawResult } from 'custody-wallet-js';
+import { WithdrawRequest, WithdrawResult } from '@openweb3-io/openwallet-core';
 import { useWalletContext } from '../providers/WalletProvider';
 
 export const useWithdraw = (req: WithdrawRequest) => {

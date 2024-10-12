@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { Account, GetAccountsRequest, Page } from 'custody-wallet-js';
+import { Account, GetAccountsRequest, Page } from '@openweb3-io/openwallet-core';
 import { useWalletContext } from '../providers/WalletProvider';
 import { QueryKey } from './keys';
 

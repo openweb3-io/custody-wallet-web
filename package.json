@@ -1,5 +1,5 @@
 {
-    "name": "custody-wallet-web",
+    "name": "@openweb3-io/openwallet-web",
     "version": "1.0.0",
     "repository": {
         "type": "git",

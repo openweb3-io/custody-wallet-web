@@ -1,5 +1,5 @@
 import { useMutation } from '@tanstack/react-query';
-import { CreateInvoiceRequest, Invoice } from 'custody-wallet-js';
+import { CreateInvoiceRequest, Invoice } from '@openweb3-io/openwallet-core';
 import { useWalletContext } from '../providers/WalletProvider';
 
 export const useCreateInvoice = (req: CreateInvoiceRequest) => {
