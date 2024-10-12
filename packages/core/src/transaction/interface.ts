@@ -13,13 +13,17 @@ export enum TransactionStatus {
 
 export interface Transaction {
   id: string;
-  currency: string;
-  network?: string;
   amount: string;
+  avatar?: string;
+  currency: string;
   direction: TransactionDirection;
-  status: TransactionStatus;
-  gateway: string;
   created_at: Date;
+  gateway: string;
+  network?: string;
+  status: TransactionStatus;
+  wallet_id?: string;
+  from_address?: string;
+  to_address?: string;
 }
 
 export interface GetTransactionsRequest extends ListQuery {
