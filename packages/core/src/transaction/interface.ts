@@ -14,6 +14,7 @@ export enum TransactionStatus {
 export interface Transaction {
   id: string;
   amount: string;
+  readable_amount: string;
   avatar?: string;
   currency: string;
   direction: TransactionDirection;
