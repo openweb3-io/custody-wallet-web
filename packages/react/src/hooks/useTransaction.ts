@@ -1,12 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
-import { Transaction } from '@openweb3-io/openwallet-core';
 import { useWalletContext } from '../providers/WalletProvider';
 import { QueryKey } from './keys';
 
 export const useTransaction = (id: string) => {
   const { client } = useWalletContext();
 
-  return useQuery<Transaction>({
+  return useQuery({
     queryKey: [QueryKey.transaction, id],
     queryFn: async () => {
       return await client.transactionApi.getTransaction(id);

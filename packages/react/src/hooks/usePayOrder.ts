@@ -1,14 +1,14 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { Order, PayOrderRequest } from '@openweb3-io/openwallet-core';
+import { PayOrderRequest } from '@openweb3-io/openwallet-core';
 import { useWalletContext } from '../providers/WalletProvider';
 import { QueryKey } from './keys';
 
-export const usePayOrder = (req: PayOrderRequest) => {
+export const usePayOrder = () => {
   const { client } = useWalletContext();
   const queryClient = useQueryClient();
 
-  return useMutation<Order>({
-    mutationFn: async () => {
+  return useMutation({
+    mutationFn: async (req: PayOrderRequest) => {
       return await client.orderApi.pay(req);
     },
     onSuccess: data => {

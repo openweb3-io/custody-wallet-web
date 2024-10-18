@@ -1,12 +1,12 @@
 import { useMutation } from '@tanstack/react-query';
-import { WithdrawRequest, WithdrawResult } from '@openweb3-io/openwallet-core';
+import { WithdrawRequest } from '@openweb3-io/openwallet-core';
 import { useWalletContext } from '../providers/WalletProvider';
 
-export const useWithdraw = (req: WithdrawRequest) => {
+export const useWithdraw = () => {
   const { client } = useWalletContext();
 
-  return useMutation<WithdrawResult>({
-    mutationFn: async () => {
+  return useMutation({
+    mutationFn: async (req: WithdrawRequest) => {
       return await client.withdrawApi.withdraw(req);
     }
   });
