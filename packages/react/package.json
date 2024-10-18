@@ -1,6 +1,6 @@
 {
     "name": "@openweb3-io/openwallet-react",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "author": "AI <ai@openweb3.io>",
     "description": "React for web wallet",
     "main": "dist/index.js",

@@ -8,21 +8,24 @@ import { IWithdrawApi } from './withdraw';
 import { IDepositApi } from './deposit';
 
 export enum EventTypes {
-  ACCOUNT_CHANGED = 'account_changed'
+  AccountBalanceUpdated = 'account.balance.updated'
 }
 
-export type AccountChangedEvent = {
-  account: Account;
+export type AccountBalanceUpdatedData = {
+  balance: string;
+  direction: 'IN' | 'OUT';
+  amount: string;
+  currency: string;
 };
 
-export type EventPayload = {
-  [EventTypes.ACCOUNT_CHANGED]: AccountChangedEvent;
+export type EventData = {
+  [EventTypes.AccountBalanceUpdated]: AccountBalanceUpdatedData;
 };
 
 export interface IWalletClient {
   emit<T extends EventEmitter.EventNames<EventTypes>>(
     event: T,
-    ...args: EventEmitter.EventArgs<EventPayload, T>
+    ...args: EventEmitter.EventArgs<EventData, T>
   ): boolean;
 
   /**

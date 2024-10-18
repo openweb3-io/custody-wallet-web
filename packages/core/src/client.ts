@@ -105,7 +105,7 @@ export class WalletClient extends EventEmitter implements IWalletClient {
     this.unwatch();
 
     const handleEvent = (event: WalletEvent) => {
-      this.on(event.type, event.data);
+      this.emit(event.type, event.data);
     };
 
     this.closeConnection = watchEvents({
@@ -135,8 +135,9 @@ const watchEvents = ({
   const eventSource = new EventSourcePolyfill(url, props);
 
   const onMessage = (params: MessageEvent<string>) => {
-    console.log('sse message:', params.data);
-    const { event } = JSON.parse(params.data);
+    const { data } = params;
+    console.log('sse message:', data);
+    const event = JSON.parse(data);
     handleEvent(event);
   };
 
