@@ -1,5 +1,5 @@
 import EventEmitter from 'eventemitter3';
-import { Account, IAccountApi } from './account';
+import { IAccountApi } from './account';
 import { ICurrencyApi } from './currency';
 import { IDepositAddressApi } from './deposit_address';
 import { ITransactionApi } from './transaction';
