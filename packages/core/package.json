@@ -1,6 +1,6 @@
 {
     "name": "@openweb3-io/openwallet-core",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "author": "AI <ai@openweb3.io>",
     "description": "Core features and state for web wallet",
     "main": "dist/index.js",

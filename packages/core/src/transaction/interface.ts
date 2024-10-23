@@ -8,7 +8,7 @@ export enum TransactionDirection {
 export enum TransactionStatus {
   SUCCEED = 'SUCCEED',
   FAILED = 'FAILED',
-  PENDING = 'PENDING'
+  PROCESSING = 'PROCESSING'
 }
 
 export interface Transaction {
