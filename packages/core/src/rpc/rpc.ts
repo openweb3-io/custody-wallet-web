@@ -1,5 +1,5 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { parseError } from '../error';
+import { BalanceNotEnoughError, WalletError } from '../error';
 
 export type RPCRequest = AxiosRequestConfig;
 
@@ -44,4 +44,11 @@ export class RPC {
       }
     }
   }
+}
+
+function parseError(message: string): WalletError {
+  if (message.indexOf('desc = withdraw amount not enough') >= 0) {
+    throw new BalanceNotEnoughError(message);
+  }
+  throw new WalletError(message);
 }

@@ -8,3 +8,4 @@ export * from './deposit_address';
 export * from './order';
 export * from './transaction';
 export * from './withdraw';
+export * from './error';
