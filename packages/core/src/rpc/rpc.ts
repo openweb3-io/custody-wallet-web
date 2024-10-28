@@ -1,4 +1,5 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
+import { parseError } from '../error';
 
 export type RPCRequest = AxiosRequestConfig;
 
@@ -37,7 +38,7 @@ export class RPC {
       return await axios.request(mergedConfig);
     } catch (e) {
       if (e instanceof AxiosError && e.response) {
-        throw new Error(e.response.data.error);
+        throw parseError(e.response.data.error);
       } else {
         throw e;
       }
