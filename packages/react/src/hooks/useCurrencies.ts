@@ -4,12 +4,12 @@ import { useWalletContext } from '../providers/WalletProvider';
 import { QueryKey } from './keys';
 
 export const useCurrencies = (params: GetCurrenciesRequest) => {
-  const { client } = useWalletContext();
+    const { client } = useWalletContext();
 
-  return useQuery({
-    queryKey: [QueryKey.currencies, params],
-    queryFn: async () => {
-      return await client.currencyApi.getCurrencies(params);
-    }
-  });
+    return useQuery({
+        queryKey: [QueryKey.currencies, params],
+        queryFn: async () => {
+            return await client.currencyApi.getCurrencies(params);
+        }
+    });
 };
